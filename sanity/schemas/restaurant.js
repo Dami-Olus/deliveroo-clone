@@ -18,7 +18,7 @@ export default {
     {
       name: "image",
       type: "image",
-      title: "Image of the Restaurant",
+      title: "Image of the restaurant",
     },
     {
       name: "lat",
@@ -39,16 +39,15 @@ export default {
     {
       name: "rating",
       type: "number",
-      title: "Enter a rating from (1-5 Stars)",
+      title: "Enter a Rating from (1-5 Stars)",
       validation: (Rule) =>
         Rule.required()
           .min(1)
           .max(5)
-          .error("Please enter a value between 1 and 5"),
+          .error("Please enter a Value between 1 and 5"),
     },
     {
       name: "type",
-
       title: "Category",
       validation: (Rule) => Rule.required(),
       type: "reference",
@@ -56,8 +55,9 @@ export default {
     },
     {
       name: "dishes",
-      type: "array",
       title: "Dishes",
+
+      type: "array",
       of: [{ type: "reference", to: [{ type: "dish" }] }],
     },
   ],

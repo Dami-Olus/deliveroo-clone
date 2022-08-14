@@ -1,7 +1,7 @@
 export default {
   name: "featured",
-  title: "Featured Menu categories",
   type: "document",
+  title: "Featured Menu categories",
   fields: [
     {
       name: "name",
@@ -16,7 +16,7 @@ export default {
       validation: (Rule) => Rule.max(200),
     },
     {
-      name: "restaurants",
+      name: "restaurant",
       type: "array",
       title: "Restaurants",
       of: [{ type: "reference", to: [{ type: "restaurant" }] }],

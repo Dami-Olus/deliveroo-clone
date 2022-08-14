@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "deliveroo-clone"
+    "name": "deliveroo-clone-sanity"
   },
   "api": {
-    "projectId": "sdsx3ii7",
+    "projectId": "e2dquspc",
     "dataset": "production"
   },
   "plugins": [
