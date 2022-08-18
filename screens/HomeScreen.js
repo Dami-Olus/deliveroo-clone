@@ -46,7 +46,7 @@ const HomeScreen = () => {
       });
   }, []);
 
-  console.log(featuredCategories);
+  
 
   return (
     <SafeAreaView style={GlobalStyles.droidSafeArea}>
