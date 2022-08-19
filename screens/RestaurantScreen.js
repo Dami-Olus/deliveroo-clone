@@ -8,6 +8,7 @@ import {
   QuestionMarkCircleIcon,
   StarIcon,
 } from "react-native-heroicons/outline";
+import BasketIcon from "../components/BasketIcon";
 import DishRow from "../components/DishRow";
 import { urlFor } from "../sanity";
 
@@ -38,6 +39,8 @@ const RestaurantScreen = () => {
   console.log(dishes)
 
   return (
+    <>
+    <BasketIcon />
     <ScrollView>
       <View>
         <Image
@@ -102,6 +105,8 @@ const RestaurantScreen = () => {
         />
       ))}
     </ScrollView>
+    </>
+
   );
 };
 
