@@ -29,6 +29,8 @@ const FeaturedRow = ({ id, title, description }) => {
       });
   }, []);
 
+
+  
  
 
   return (

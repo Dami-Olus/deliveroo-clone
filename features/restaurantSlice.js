@@ -19,7 +19,7 @@ export const restaurantSlice = createSlice({
   initialState,
   reducers: {
     setRestaurant: (state, action) => {
-      state.restautant = action.payload;
+      state.restaurant = action.payload;
     },
   },
 });
