@@ -37,7 +37,7 @@ const DishRow = ({ id, name, description, price, image }) => {
           <View className="flex-1">
             <Text className="text-large mb-1">{name}</Text>
             <Text className="text-gray-400">{description}</Text>
-            <Text>
+            <Text className="text-gray-400">
               <Currency quantity={price} currency="GBP" />
             </Text>
           </View>

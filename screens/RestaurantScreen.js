@@ -1,5 +1,5 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import {
   ArrowLeftIcon,
@@ -8,12 +8,15 @@ import {
   QuestionMarkCircleIcon,
   StarIcon,
 } from "react-native-heroicons/outline";
+import { useDispatch } from "react-redux";
 import BasketIcon from "../components/BasketIcon";
 import DishRow from "../components/DishRow";
+import { setRestaurant } from "../features/restaurantSlice";
 import { urlFor } from "../sanity";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const {
     params: {
@@ -30,13 +33,28 @@ const RestaurantScreen = () => {
     },
   } = useRoute();
 
+  useEffect(() => {
+    dispatch(setRestaurant({
+      id,
+      imgUrl,
+      title,
+      rating,
+      genre,
+      address,
+      short_description,
+      dishes,
+      long,
+      lat,
+    }))
+  },[])
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
   }, []);
 
-  console.log(dishes)
+  
 
   return (
     <>
@@ -87,11 +105,11 @@ const RestaurantScreen = () => {
           <ChevronRightIcon color="#00CCBB" />
         </TouchableOpacity>
       </View>
-      <View>
+      <View className="pb-36">
         <Text className="px-4 pt-6 mb-3 font-bold text-xl">
           Menu
         </Text>
-      </View>
+      
 
       {/*Dishrows */}
       {dishes?.map(dish => (
@@ -104,6 +122,7 @@ const RestaurantScreen = () => {
         image={dish.image}
         />
       ))}
+      </View>
     </ScrollView>
     </>
 
